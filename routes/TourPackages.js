@@ -98,7 +98,7 @@ router.get("/g/getPackages", async(req,res)=>{
     try{
         let tourPkgsArr ;
         tourPkgsArr = await Package.find({});
-        console.log(tourPkgsArr);
+       
         res.status(200).json(tourPkgsArr);
     }
     catch(err)
