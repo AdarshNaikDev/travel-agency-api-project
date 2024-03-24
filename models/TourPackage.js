@@ -22,6 +22,10 @@ const TourPackageSchema = new mongoose.Schema({
        categories:{
         type:Array,
         required: false
+       },
+       pkgImages:{
+          type:Array,
+          required: true
        }
     },{timestamps:true})
 

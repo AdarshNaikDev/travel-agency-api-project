@@ -8,6 +8,7 @@ const bcrypt = require("bcrypt");
 //Create a new tour Package
 router.post("/addTourPackage", async(req,res)=>{
     const newTourPackage = new Package(req.body);
+    
     try{
         const savedPackage = await newTourPackage.save();
         res.status(200).json(savedPackage)
