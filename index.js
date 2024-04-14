@@ -3,15 +3,19 @@ const app = express();
 
 const authRoute = require("./routes/Auth")
 const tourPackageRoute = require("./routes/TourPackages")
+const mnURL = "mongodb+srv://travelAgencyAdmin:travelAdminPassword@cluster0.ltdzomt.mongodb.net/travelAgency?retryWrites=true&w=majority"
 
 const dotenv = require("dotenv")
 require('dotenv').config();
 const mongoose = require("mongoose")
 dotenv.config()
 
-mongoose.connect(process.env.MONGO_URL,{
+// mongoose.connect(process.env.MONGO_URL,{
     
   
+    
+// })
+mongoose.connect(mnURL,{
     
 })
 .then(console.log("Connected to Mongo DB"))
