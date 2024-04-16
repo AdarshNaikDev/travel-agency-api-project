@@ -3,19 +3,16 @@ const app = express();
 
 const authRoute = require("./routes/Auth")
 const tourPackageRoute = require("./routes/TourPackages")
-const mnURL = "mongodb+srv://travelAgencyAdmin:travelAdminPassword@cluster0.ltdzomt.mongodb.net/travelAgency?retryWrites=true&w=majority"
+//const mnURL = "mongodb+srv://travelAgencyAdmin:travelAdminPassword@cluster0.ltdzomt.mongodb.net/travelAgency?retryWrites=true&w=majority"
 
 const dotenv = require("dotenv")
 require('dotenv').config();
 const mongoose = require("mongoose")
 dotenv.config()
 
-// mongoose.connect(process.env.MONGO_URL,{
+ mongoose.connect(process.env.MONGO_URL,{
     
   
-    
-// })
-mongoose.connect(mnURL,{
     
 })
 .then(console.log("Connected to Mongo DB"))
@@ -33,7 +30,13 @@ app.use("/api/auth/", authRoute);
 app.use("/api/TourPackage", tourPackageRoute);
 app.use('/', routes);
 
+app.get("/", (req, res) => {
+    res.send("Hello from the backend!");
+});
+
 //start the server
 app.listen("5000", ()=>{
+   
     console.log("Backend is running!")
+    
 })
