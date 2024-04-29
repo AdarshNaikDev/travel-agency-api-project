@@ -11,13 +11,29 @@ const TourPackageSchema = new mongoose.Schema({
         type:String,
         required:true
        },
+       actualPrice:{
+         type: String,
+         required: true
+       },
+       discountedPrice:{
+         type: String,
+         required: true
+       },
+       noOfDays:{
+         type: Number,
+         required: true
+       },
+       noOfNights:{
+         type: Number,
+         required: true
+       },
        photo:{
         type:String,
         required:false
        },
        username:{
         type:String,
-        rquired:true
+        required:true
        },
        categories:{
         type:Array,

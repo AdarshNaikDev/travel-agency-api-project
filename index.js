@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const authRoute = require("./routes/Auth")
 const tourPackageRoute = require("./routes/TourPackages")
@@ -27,7 +28,7 @@ const routes = require('./routes/ImageUploadRouter');
 
 
 app.use(express.json());
-
+app.use(cors())
 app.use("/api/auth/", authRoute);
 app.use("/api/TourPackage", tourPackageRoute);
 app.use("/api/UserQuery", userQueryRoute )

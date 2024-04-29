@@ -6,7 +6,7 @@ const uploadImage = require('../UploadImage');
 
 const router = express.Router();
 
-router.post('/test-upload', upload, async (req, res) => {
+router.post('/api/imageUpload', upload, async (req, res) => {
     const file = {
         type: req.file.mimetype,
         buffer: req.file.buffer
